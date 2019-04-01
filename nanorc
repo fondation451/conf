@@ -1,0 +1,36 @@
+
+## Defillement lisse
+set smooth
+
+## Largeur des tabulations
+set tabsize 4
+
+## Convertion des tabulations en espace
+set tabstospaces
+
+## Activation de la souris
+set mouse
+
+## Markdown
+include "~/.nano/markdown.nanorc"
+
+## C
+include "~/.nano/c.nanorc"
+
+## Javascript
+include "~/.nano/javascript.nanorc"
+
+## JSON
+include "~/.nano/json.nanorc"
+
+## OCaml
+include "~/.nano/ocaml.nanorc"
+
+## Perl
+include "~/.nano/perl.nanorc"
+
+## Python
+include "~/.nano/python.nanorc"
+
+## Ruby
+include "~/.nano/ruby.nanorc"
