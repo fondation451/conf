@@ -53,9 +53,6 @@ set encoding=utf-8
 " Show column and row number
 set ruler
 
-set paste
-
-
 " Map Tab to Esc and Maj+Tab to Tab
 inoremap <Tab> <Esc>
 inoremap &lt;S-Tab> <Tab>
