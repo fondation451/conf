@@ -6,9 +6,47 @@ set nocompatible
 filetype off
 set backspace=2
 
+
+"" Vundle
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'pangloss/vim-javascript'
+
+Plugin 'othree/javascript-libraries-syntax.vim'
+
+Plugin 'eslint/eslint'
+
+Plugin 'vim-syntastic/syntastic'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+
+
+
 syntax on
 
-set autoindent
+"" No indentation
+""set autoindent
+""set smartindent
 
 "" Dark consol color scheme
 set background=dark
@@ -53,12 +91,24 @@ set encoding=utf-8
 " Show column and row number
 set ruler
 
+" Show a statusline
+set laststatus=2
+set statusline=CWD:\ %r%{getcwd()}%h\ \ %F%m\ Line:\ %l,%v
+
+" Save last status
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+
 " Map Tab to Esc and Maj+Tab to Tab
 inoremap <Tab> <Esc>
 inoremap &lt;S-Tab> <Tab>
 vnoremap <Tab> <Esc>
 vnoremap &lt;S-Tab> <Tab>
 
+"" Remove trailing whitespace on save
+autocmd BufWritePre * %s/\s\+$//e
 
 " coloration des espaces de fin de ligne
 """"
